@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Estructuras y Remodelaciones Martín</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --naranja:#ff8c1a;
+    --negro:#111111;
+    --gris:#f4f4f4;
+    --blanco:#ffffff;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#fff;
+    color:#222;
+}
+
+header{
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:1000;
+    background:rgba(17,17,17,.95);
+    backdrop-filter:blur(8px);
+}
+
+.navbar{
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 20px;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo img{
+    width:55px;
+}
+
+.logo h2{
+    color:white;
+    font-size:1rem;
+}
+
+.logo span{
+    color:var(--naranja);
+}
+
+.navbar ul{
+    display:flex;
+    list-style:none;
+    gap:25px;
+}
+
+.navbar a{
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.navbar a:hover{
+    color:var(--naranja);
+}
+
+.hero{
+    min-height:100vh;
+    background:
+    linear-gradient(rgba(0,0,0,.75),
+    rgba(0,0,0,.75)),
+    url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1600');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:white;
+    padding:20px;
+}
+
+.hero-content{
+    max-width:900px;
+}
+
+.hero-logo{
+    width:180px;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:3rem;
+    margin-bottom:15px;
+}
+
+.hero h1 span{
+    color:var(--naranja);
+}
+
+.hero p{
+    font-size:1.2rem;
+    margin-bottom:30px;
+}
+
+.btn{
+    display:inline-block;
+    padding:15px 30px;
+    text-decoration:none;
+    border-radius:50px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.btn-primary{
+    background:var(--naranja);
+    color:white;
+}
+
+.btn-primary:hover{
+    background:#e87800;
+}
+
+.btn-outline{
+    border:2px solid white;
+    color:white;
+    margin-left:10px;
+}
+
+.btn-outline:hover{
+    background:white;
+    color:black;
+}
+
+section{
+    padding:90px 20px;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.section-title h2{
+    font-size:2.5rem;
+    color:var(--negro);
+}
+
+.section-title span{
+    color:var(--naranja);
+}
+
+.servicios{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 25px rgba(0,0,0,.08);
+    transition:.3s;
+    text-align:center;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card h3{
+    margin:15px 0;
+    color:var(--naranja);
+}
+
+.galeria{
+    background:var(--gris);
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:20px;
+}
+
+.gallery img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+    border-radius:15px;
+}
+
+.why{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.benefit{
+    background:white;
+    padding:25px;
+    border-left:5px solid var(--naranja);
+    box-shadow:0 3px 15px rgba(0,0,0,.08);
+}
+
+.contact{
+    background:#111;
+    color:white;
+}
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:40px;
+}
+
+.contact h3{
+    color:var(--naranja);
+    margin-bottom:15px;
+}
+
+.contact p{
+    margin:10px 0;
+}
+
+footer{
+    background:black;
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+
+.whatsapp{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    width:65px;
+    height:65px;
+    background:#25D366;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-decoration:none;
+    color:white;
+    font-size:32px;
+    box-shadow:0 5px 15px rgba(0,0,0,.3);
+}
+
+@media(max-width:768px){
+
+.navbar{
+    flex-direction:column;
+    gap:15px;
+}
+
+.navbar ul{
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.hero h1{
+    font-size:2rem;
+}
+
+.hero-logo{
+    width:130px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="navbar">
+
+<div class="logo">
+<img src="logo.png" alt="Logo Martín">
+<h2>Martín <span>Construcción</span></h2>
+</div>
+
+<ul>
+<li><a href="#inicio">Inicio</a></li>
+<li><a href="#servicios">Servicios</a></li>
+<li><a href="#galeria">Galería</a></li>
+<li><a href="#contacto">Contacto</a></li>
+</ul>
+
+</div>
+</header>
+
+<section class="hero" id="inicio">
+
+<div class="hero-content">
+
+<img src="logo.png" class="hero-logo" alt="Logo">
+
+<h1>Estructuras y Remodelaciones <span>Martín</span></h1>
+
+<p>
+Construimos tus proyectos con calidad, experiencia y compromiso.
+Especialistas en construcción, remodelación y estructuras.
+</p>
+
+<a href="#contacto" class="btn btn-primary">
+Solicitar Cotización
+</a>
+
+<a href="tel:7201966706" class="btn btn-outline">
+Llamar Ahora
+</a>
+
+</div>
+
+</section>
+
+<section id="servicios">
+
+<div class="container">
+
+<div class="section-title">
+<h2>Nuestros <span>Servicios</span></h2>
+</div>
+
+<div class="servicios">
+
+<div class="card">
+<h3>🏗 Construcción</h3>
+<p>Obra nueva residencial y comercial.</p>
+</div>
+
+<div class="card">
+<h3>🔨 Remodelaciones</h3>
+<p>Renovación de casas, locales y oficinas.</p>
+</div>
+
+<div class="card">
+<h3>🏢 Estructuras</h3>
+<p>Estructuras metálicas y de concreto.</p>
+</div>
+
+<div class="card">
+<h3>🎨 Acabados</h3>
+<p>Pintura, yeso, pisos y terminaciones.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="galeria" id="galeria">
+
+<div class="container">
+
+<div class="section-title">
+<h2>Proyectos <span>Realizados</span></h2>
+</div>
+
+<div class="gallery">
+
+<img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=900" alt="">
+<img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=900" alt="">
+<img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=900" alt="">
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+<h2>¿Por qué elegir <span>Martín?</span></h2>
+</div>
+
+<div class="why">
+
+<div class="benefit">
+<h3>✔ Calidad Garantizada</h3>
+<p>Utilizamos materiales de alta calidad.</p>
+</div>
+
+<div class="benefit">
+<h3>✔ Experiencia</h3>
+<p>Personal capacitado y comprometido.</p>
+</div>
+
+<div class="benefit">
+<h3>✔ Entregas Puntuales</h3>
+<p>Cumplimos los tiempos acordados.</p>
+</div>
+
+<div class="benefit">
+<h3>✔ Atención Personalizada</h3>
+<p>Asesoría desde el inicio hasta la entrega.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="contact" id="contacto">
+
+<div class="container">
+
+<div class="section-title">
+<h2 style="color:white;">Contacto</h2>
+</div>
+
+<div class="contact-grid">
+
+<div>
+<h3>Teléfonos</h3>
+
+<p>📞 720-196-67-06</p>
+<p>📞 661-119-93-38</p>
+<p>📞 661-124-32-14</p>
+</div>
+
+<div>
+<h3>Solicita tu presupuesto</h3>
+
+<p>
+Contáctanos por teléfono o WhatsApp para recibir una cotización sin compromiso.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+© 2025 Estructuras y Remodelaciones Martín | Todos los derechos reservados
+</footer>
+
+<a class="whatsapp"
+href="https://wa.me/527201966706"
+target="_blank">
+💬
+</a>
+
+</body>
+</html>
